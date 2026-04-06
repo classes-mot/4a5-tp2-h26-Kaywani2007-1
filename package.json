@@ -20,6 +20,7 @@
   "homepage": "https://github.com/classes-mot/4a5-tp2-h26-Kaywani2007-1#readme",
   "dependencies": {
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.4.1"
   }
 }
