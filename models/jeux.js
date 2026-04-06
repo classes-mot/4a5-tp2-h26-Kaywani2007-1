@@ -6,6 +6,7 @@ const jeuSchema = new mongoose.Schema({
     categorie: { type: String },
     nbJoueurs: { type: Number},
     duree: { type: Number},
+    user: { type: mongoose.Types.ObjectId, required: true, ref: 'User'}
 })
 
 export const Jeu = mongoose.model('Jeu', jeuSchema);

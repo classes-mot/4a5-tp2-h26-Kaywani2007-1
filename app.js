@@ -1,5 +1,5 @@
 import express from 'express';
-import {addJeu, getJeux, addUser, loginUser } from './mongoose.js'
+import {addJeu, getJeux, deleteJeu, addUser, loginUser } from './mongoose.js'
 // getUsers, 
 import checkAuth from './middleware/check-auth.js';
 const app = express();
@@ -16,7 +16,7 @@ app.use(checkAuth);
 
 app.post(`/addJeux`, addJeu);
 // app.patch(`/modifierJeu`, modifierJeu);
-// app.delete(`/deleteJeu`, deleteJeu);
+app.delete(`/deleteJeu/:id`, deleteJeu);
 
 const port = 5000;
 app.listen(port, () => {
