@@ -47,6 +47,35 @@ const getJeux = async (requete,reponse, next) => {
     reponse.json(jeux);
 };
 
+const getUnJeu = async (requete, reponse, next) => {
+    const jeuId = requete.params.id;
+    let jeu;
+    try{
+        jeu = await Jeu.findById(jeuId);
+    }catch (err){
+        console.log(err);
+        return reponse.status(500).json({message: "une erreur BD est survenue"});
+    }
+    if(!jeu){
+        return reponse.status(404).json({message: "Jeu introuvable"});
+    }
+    reponse.json({jeu: jeu.toObject({getters:true})});
+};
+
+const modifierJeu = async (requete, reponse, next) => {
+    const jeuId = requete.params.id;
+    const jeuUpdates = requete.body;
+    try{
+        const updatedJeu = await Jeu.findByIdAndUpdate(jeuId, jeuUpdates,{new:true});
+        if(!updatedJeu){
+            return reponse.status(404).json({message: "Jeu introuvable"});
+        }
+        reponse.status(200).json({jeu: updatedJeu.toObject({getters:true})});
+    }catch (err) {
+        reponse.status(500).json({message: "Erreur lors de la mise à jour du jeu"});
+    }
+};
+
 const deleteJeu = async (requete,reponse, next) => {
     const jeuId = requete.params.id;
 
@@ -123,4 +152,4 @@ const loginUser = async (requete, reponse, next) => {
     });
 };
 
-export {addJeu, getJeux,deleteJeu, addUser, loginUser };
+export {addJeu, getJeux, getUnJeu, modifierJeu, deleteJeu, addUser, loginUser };

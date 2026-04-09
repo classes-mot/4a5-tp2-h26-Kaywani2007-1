@@ -1,5 +1,5 @@
 import express from 'express';
-import {addJeu, getJeux, deleteJeu, addUser, loginUser } from './mongoose.js'
+import {addJeu, getJeux, getUnJeu, modifierJeu, deleteJeu, addUser, loginUser } from './mongoose.js'
 // getUsers, 
 import checkAuth from './middleware/check-auth.js';
 const app = express();
@@ -10,12 +10,12 @@ app.post(`/addUser`, addUser);
 app.post(`/login`, loginUser);
 
 app.get(`/readJeux`, getJeux);
-// app.get('/readUnJeu, getUnJeu);
+app.get(`/readUnJeu/:id`, getUnJeu);
 
 app.use(checkAuth);
 
 app.post(`/addJeux`, addJeu);
-// app.patch(`/modifierJeu`, modifierJeu);
+app.patch(`/modifierJeu/:id`, modifierJeu);
 app.delete(`/deleteJeu/:id`, deleteJeu);
 
 const port = 5000;
