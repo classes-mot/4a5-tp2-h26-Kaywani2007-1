@@ -1,0 +1,252 @@
+{
+  "info": {
+    "_postman_id": "dfdf3fe4-11ba-4f77-b740-321a33b86a6b",
+    "name": "tp2-webEtBase",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52765508"
+  },
+  "item": [
+    {
+      "name": "/api/users",
+      "item": [
+        {
+          "name": "inscription (USER)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Kaywanali23\",\r\n    \"email\": \"kaywanali30007@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/addUser",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "addUser"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login (USER)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kaywanali30007@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/users/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "/api/jeux",
+      "item": [
+        {
+          "name": "deleteJeu",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWQyY2I0MmI1NjBkMTAxNTcxYjQxMmQiLCJlbWFpbCI6ImtheXdhbmFsaTIyMDA3QGdtYWlsLmNvbSIsImlhdCI6MTc3NTUxMTA1OSwiZXhwIjoxNzc1NTE0NjU5fQ._rkz-QxBKcHjLJOaBY4opuyCYFXjOyZfkOGzTHmMnfA",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/deleteJeu/69d42c01a47c56410df9db56",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "deleteJeu",
+                "69d42c01a47c56410df9db56"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Maj jeu",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"william est gay\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/modifierJeu/69d4206d99f9c68449cde177",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "modifierJeu",
+                "69d4206d99f9c68449cde177"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getUnJeu (ID)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/readUnJeu/69d4206d99f9c68449cde177",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "readUnJeu",
+                "69d4206d99f9c68449cde177"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get all jeux",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/readJeux",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "readJeux"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ajouterJeu",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"echec\",\r\n    \"description\": \"prendre le roi\",\r\n    \"categorie\": \"stratégie\",\r\n    \"nbJoueurs\": 2,\r\n    \"duree\": 60\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/jeux/addJeux",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "jeux",
+                "addJeux"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWQ3YWY3ODRlYTg2MzkxOTRmYTQ1NzUiLCJlbWFpbCI6ImtheXdhbmFsaTMwMDA3QGdtYWlsLmNvbSIsImlhdCI6MTc3NTc0MjkxMiwiZXhwIjoxNzc1NzQ2NTEyfQ.qS1Jfi4oLzdroIrw2FRISIiOJ6mMHTvfwqJbklKwDho",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
